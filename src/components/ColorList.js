@@ -32,9 +32,7 @@ const ColorList = ({ colors, updateColors }) => {
             return item;
           }
         });
-        console.log(updatedColors);
         updateColors(updatedColors);
-        console.log(colors);
       })
       .catch(err => {
         console.log(err);
@@ -42,6 +40,16 @@ const ColorList = ({ colors, updateColors }) => {
   };
 
   const deleteColor = color => {
+    axiosWithAuth()
+      .delete(`http://localhost:5000/api/colors/${color.id}`)
+      .then( res => {
+        console.log(res.data);
+        const updatedColors = colors.filter(item => item.id !== color.id);
+        updateColors(updatedColors);
+      })
+      .catch(err => {
+        console.log(err);
+      })
   };
 
   return (
