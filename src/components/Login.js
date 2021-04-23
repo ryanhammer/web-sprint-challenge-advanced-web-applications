@@ -20,6 +20,7 @@ const Login = () => {
   };
 
   const [credentials, setCredentials] = useState(initialLoginValues);
+  const [error, setError] = useState({});
 
   const handleChange = e => {
     setCredentials({
@@ -34,14 +35,16 @@ const Login = () => {
     axiosWithAuth()
       .post('/api/login', credentials)
       .then( (res) => {
+        console.log(res);
         // If the post request is store the token in localStorage (sessions, cookies)...add window in front to accommodate some older browsers
         window.localStorage.setItem('token', JSON.stringify(res.data.payload));
         // navigate to the BubblePage route
         history.push('/bubblepage');
       })
       .catch( (err) => {
-        console.log(err);
-        setError(err);
+        console.log(err.response.data);
+        setError(err.response.data);
+        console.log(error.error);
       })
   };
 
@@ -49,8 +52,6 @@ const Login = () => {
     // make a post request to retrieve a token from the api
     // when you have handled the token, navigate to the BubblePage route
   });
-  
-  const [error, setError] = useState("");
 
   return (
     <div>
@@ -96,7 +97,7 @@ const Login = () => {
         </form>
       </div>
 
-      <p data-testid="errorMessage" className="error">{error}</p>
+      <p data-testid="errorMessage" className="error">{error.error}</p>
     </div>
   );
 };

@@ -53,7 +53,7 @@ Your finished project must include all of the following requirements. **Unlike o
 #### Consuming the API
 > *Add in the axios requests and state changes needed to connect our api to the web application. Consider the effect of authentication on your api requests.*
 
-* [ ] When `BubblePages` mounts, make a GET request to fetch the color data for your bubbles.
+* [x] When `BubblePages` mounts, make a GET request to fetch the color data for your bubbles.
 * [ ] In `ColorList.js`, complete the `saveEdit` and `deleteColor` functions to make API requests for to editing and delete data.
 * [ ] Watch and enjoy as your app responds to updates in the data. Check out `Bubbles.js` to see how this is built.
 
