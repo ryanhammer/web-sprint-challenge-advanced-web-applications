@@ -7,12 +7,17 @@ import BubblePage from "./components/BubblePage";
 import "./styles.scss";
 
 function App() {
+
+  const logout = () => {
+    window.localStorage.removeItem('token');
+  };
+
   return (
     <Router>
       <div className="App">
         <header>
           Color Picker Sprint Challenge
-          <a data-testid="logoutButton" href="#">logout</a>
+          <a data-testid="logoutButton" href="#" onClick={logout} >logout</a>
         </header> 
         <Switch>
           <PrivateRoute path="/bubblepage" component={ BubblePage } />

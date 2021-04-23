@@ -7,7 +7,7 @@ import ColorList from "./ColorList";
 const BubblePage = () => {
   const [colorList, setColorList] = useState([]);
 
-  const getBubbles = () => {
+  const getBubbleColors = () => {
     axiosWithAuth()
       .get("/api/colors")
       .then( (res) => {
@@ -19,7 +19,7 @@ const BubblePage = () => {
   };
 
   useEffect(() => {
-    getBubbles();
+    getBubbleColors();
   }, []);
 
   return (
