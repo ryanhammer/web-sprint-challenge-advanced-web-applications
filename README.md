@@ -55,10 +55,10 @@ Your finished project must include all of the following requirements. **Unlike o
 
 * [x] When `BubblePages` mounts, make a GET request to fetch the color data for your bubbles.
 * [x] In `ColorList.js`, complete the `saveEdit` and `deleteColor` functions to make API requests for to editing and delete data.
-* [ ] Watch and enjoy as your app responds to updates in the data. Check out `Bubbles.js` to see how this is built.
+* [x] Watch and enjoy as your app responds to updates in the data. Check out `Bubbles.js` to see how this is built.
 
 #### Testing
-* [ ] Finish the test in `BubblePage.test.js` to test that your app is fetching the bubble data from the API
+* [x] Finish the test in `BubblePage.test.js` to test that your app is fetching the bubble data from the API
 
 **Notes:**
 * You are welcome to create additional files but **do not move or rename existing files** or folders.
